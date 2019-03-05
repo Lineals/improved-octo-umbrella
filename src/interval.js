@@ -105,7 +105,12 @@ class Interval {
      * @returns {Interval[]}
      */
     exclusion(interval) {
-
+        if (this.overlaps(interval)) {
+            let inter = this.intersection(interval)
+            return [new Interval(Math.min(this.start, interval.start), inter.start),
+                    new Interval(inter.end, Math.max(this.end, interval.end))]
+        }
+        else return [this, interval]
     };
 }
 
