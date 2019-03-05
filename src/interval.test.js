@@ -50,3 +50,18 @@ describe('Union', function () {
     );
 });
 
+describe('Intersection', function () {
+    test.each([
+        [3, 10, 4, 9, new Interval(4,9)],
+        [5, 10, 4, 9, new Interval(5,9)],
+        [1, 2, 4, 9, []],
+        [1, 20, 0, 9, new Interval(1,9)],
+        [10, 20, 1, 2, []]
+    ])(
+
+        'Interval (%i,%i) (%i,%i)',
+        (a1,a2,b1,b2, expected) => {
+            expect(new Interval(a1,a2).intersection(new Interval(b1,b2))).toEqual(expected);
+        },
+    );
+});

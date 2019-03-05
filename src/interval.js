@@ -81,10 +81,11 @@ class Interval {
      *      interval1.intersection(interval2) => <tableau vide>
      *
      * @param {Interval} interval
-     * @returns {Interval|null}
+     * @returns {Interval|[]}
      */
     intersection(interval) {
-
+        if (this.overlaps(interval)) return new Interval(Math.max(this.start, interval.start), Math.min(this.end, interval.end))
+        else return []
     };
 
     /**
