@@ -43,7 +43,9 @@ describe('Union', function () {
 
         'Interval (%i,%i) is around (%i,%i) : %p',
         (a1,a2,b1,b2, expected) => {
-            expect(new Interval(a1,a2).union(new Interval(b1,b2))).toEqual(expected);
+            expected.forEach(function(element){
+                expect(new Interval(a1,a2).union(new Interval(b1,b2))).toContainEqual(element);
+            });
         },
     );
 });
