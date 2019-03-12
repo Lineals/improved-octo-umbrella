@@ -63,7 +63,9 @@ class Interval {
      * @returns {Interval[]}
      */
     union(interval) {
-        if (this.overlaps(interval)) return [new Interval(Math.min(this.start, interval.start),Math.max(this.end, interval.end))]
+        if (this.overlaps(interval) || [this.end, this.start].includes(interval.start) || [this.end, this.start].includes(interval.end))
+            return [new Interval(Math.min(this.start, interval.start),
+                                 Math.max(this.end, interval.end))]
         else return [this, interval]
     };
 
