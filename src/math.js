@@ -1,3 +1,5 @@
+const Alphabet = require('alphabet');
+
 let Util = {};
 
 Util.factorial = (n) => {
@@ -88,8 +90,8 @@ Util.fizzBuzz = function(n) {
  * @returns {string}
  */
 Util.cipher = function (phrase) {
-    let al_low = 'abcdefghijklmnopqrstuvwxyz'.split("")
-    let al_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split("")
+    let al_low = Alphabet.lower
+    let al_up = Alphabet.upper
     let encrypt = ""
     for (let i = 0; i < phrase.length; i++){
         if (al_low.includes(phrase[i])) encrypt += al_low[(al_low.indexOf(phrase[i]) + 1) % al_low.length]
