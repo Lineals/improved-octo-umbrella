@@ -6,19 +6,30 @@
   "directories": {
     "test": "test"
   },
+  "jest" : {
+    "verbose": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 40,
+        "lines": 90,
+        "statements": -10
+      }
+    }
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kirouane/test-tp.git"
+    "url": "git+https://github.com/Lineals/improved-octo-umbrella.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kirouane/test-tp/issues"
+    "url": "https://github.com/Lineals/improved-octo-umbrella/issues"
   },
-  "homepage": "https://github.com/Kirouane/test-tp#readme",
+  "homepage": "https://github.com/Lineals/improved-octo-umbrella#readme",
   "devDependencies": {
     "jest": "^24.1.0"
   },
